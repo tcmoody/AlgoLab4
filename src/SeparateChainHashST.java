@@ -1,6 +1,6 @@
+import java.util.ArrayList;
 
 public class SeparateChainHashST<K,V> implements SymbolTable<K,V> {
-
 	@Override
 	public void put(K key, V value) {
 		// TODO Auto-generated method stub
@@ -39,8 +39,6 @@ public class SeparateChainHashST<K,V> implements SymbolTable<K,V> {
 
 	@Override
 	public Iterable<K> keys() {
-		// NOTE: you may use ArrayList here for simplicity.
-		// TODO Auto-generated method stub
 		return null;
 	}
 

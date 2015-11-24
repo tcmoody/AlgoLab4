@@ -14,19 +14,6 @@ public class PostTest {
 
 	@Test
 	public void testHashCode() {
-		int[] test = new int[100000];
-		for (int i = 0; i < test.length; i++) {
-			test[i] = 0;
-		}
-		for (int i = 0; i < 10000; i++) {
-			p = new Post();
-			test[p.hashCode()]++;
-		}
-		for (int i = 0; i < test.length; i++) {
-			if (test[i] > 0) {
-				System.out.println("i: " + i + "num: " + test[i]);
-			}
-		}
 		assertNotNull(p.hashCode());
 
 	}

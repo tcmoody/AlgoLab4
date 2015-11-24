@@ -44,8 +44,10 @@ public class Post implements Cloneable {
 		if (this.getClass() != obj.getClass())
 			return false;
 		Post object = (Post) obj;
-		if (object.hashCode() == this.hashCode())
+		if (object.authorId == this.authorId && object.day == this.day && object.hour == this.hour
+				&& object.minute == this.minute && object.seconds == this.seconds)
 			return true;
+
 		return false;
 	}
 
@@ -56,7 +58,12 @@ public class Post implements Cloneable {
 		for (int i = 0; i < postId.length(); i++) {
 			result = (prime * result + postId.charAt(i));
 		}
-		result = result % (postId.length() * 100);
+		result = prime * result + authorId;
+		result = prime * result + year;
+		result = prime * result + day;
+		result = prime * result + hour;
+		result = prime * result + minute;
+		result = prime * result + seconds;
 		if (result < 0) {
 			result = -result;
 		}

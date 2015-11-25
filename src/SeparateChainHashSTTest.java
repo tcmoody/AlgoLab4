@@ -1,52 +1,59 @@
   import static org.junit.Assert.*;
 
+import java.util.HashMap;
+
 import org.junit.Before;
 import org.junit.Test;
 
-public class SeparateChainHashSTTest {
-
+public class SeparateChainHashSTTest<K, V> {
+	private SeparateChainHashST<Integer, Post> hashMap;
+	private SeparateChainHashST<Integer, Post> hashMap2;
+	private Post[] items;
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	@Test
-	public void testSeparateChainHashST() {
-		fail("Not yet implemented");
+		items = new Post[100];
+		hashMap = new SeparateChainHashST<Integer, Post>(100);
+		hashMap2 = new SeparateChainHashST<Integer, Post>(100);
+		for(int i=0; i<100; i++){
+			items[i] = new Post();
+		}
+		for(int i=0; i<100; i++){
+			hashMap.put(items[i].hashCode(), items[i]);
+			System.out.println(hashMap.get(items[i].hashCode()));
+		}
 	}
 
 	@Test
 	public void testPut() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGet() {
-		fail("Not yet implemented");
+		assertNotNull(hashMap.get(items[12].hashCode()));
 	}
 
 	@Test
 	public void testDelete() {
-		fail("Not yet implemented");
+		hashMap.delete(items[21].hashCode());
+		System.out.println(hashMap.get(items[21].hashCode()));
+		assertFalse(hashMap.contains(items[21].hashCode()));
 	}
 
 	@Test
 	public void testContains() {
-		fail("Not yet implemented");
+		assertTrue(hashMap.contains(items[15].hashCode()));
 	}
 
 	@Test
 	public void testIsEmpty() {
-		fail("Not yet implemented");
+		assertTrue(hashMap2.isEmpty());
 	}
 
 	@Test
 	public void testSize() {
-		fail("Not yet implemented");
+		assertEquals(hashMap.size(), 100);
 	}
 
 	@Test
 	public void testKeys() {
-		fail("Not yet implemented");
+		Iterable<Integer> x = hashMap.keys();
+		assertNotNull(x);
 	}
 
 }

@@ -1,8 +1,8 @@
 
 public class SequentialSearch<K, V> {
-	private Node first;
+	public Node first;
 
-	private class Node {
+	public class Node {
 
 		K key;
 		V value;

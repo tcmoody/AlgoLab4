@@ -53,7 +53,7 @@ public class Post implements Cloneable {
 
 	@Override
 	public int hashCode() {
-		final int prime = 11;
+		final int prime = 111;
 		int result = 1;
 		for (int i = 0; i < postId.length(); i++) {
 			result = (prime * result + postId.charAt(i));

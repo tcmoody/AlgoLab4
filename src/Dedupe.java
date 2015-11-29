@@ -10,11 +10,10 @@ public class Dedupe {
 		for (int i = 0; i < x; i++) {
 			datSweetHashMap.put(allDemPosts[i].hashCode(), allDemPosts[i]);
 		}
-		
 		Iterable<Integer> keysIt = datSweetHashMap.keys();
 		for (int key : keysIt) {
 			if(datSweetHashMap.contains(key)){
-				System.out.println(key + ", " + datSweetHashMap.get(key).toString());
+				System.out.println(key + "," + datSweetHashMap.get(key).toString());
 			}
 		}
 	}
@@ -36,7 +35,7 @@ public class Dedupe {
 		Post temp = null;
 		for (int i = 0; i < N; i++) {
 			if (i >= postWithoutDupes.length) {
-				temp = (Post) postWithoutDupes[i-50].clone();
+				temp = (Post) postWithoutDupes[i-(N/2)].clone();
 				postWithDupes[i] = temp;
 			} else {
 				postWithDupes[i] = postWithoutDupes[i];

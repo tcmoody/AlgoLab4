@@ -38,6 +38,7 @@ public class SequentialSearchST<K, V> {
 		}
 		if(first == null){
 			first = new Node(key, value, null);
+			sz++;
 			return;
 		}
 		Node prev = null;
@@ -49,10 +50,10 @@ public class SequentialSearchST<K, V> {
 			prev = node;
 		}
 		prev.next = new Node(key, value, null);
-		System.out.println("==========================");
-		for(Node n = first; n!=null; n = n.next){
-			System.out.println(n);
-		}
+//		System.out.println("==========================");
+//		for(Node n = first; n!=null; n = n.next){
+//			System.out.println(n);
+//		}
 		sz++;
 	}
 
@@ -98,11 +99,12 @@ public class SequentialSearchST<K, V> {
 			if (nd == null)
 				break;
 			if (key.equals(first.key)) {
+				System.out.println("found it1");
 				first = nd.next;
 				sz--;
 			} else if (key.equals(nd.key)) {
-				sz--;
 				prev.next = nd.next;
+				sz--;
 			}
 			prev = nd;
 			nd = nd.next;

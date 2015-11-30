@@ -11,11 +11,14 @@ public class Dedupe {
 			datSweetHashMap.put(allDemPosts[i].hashCode(), allDemPosts[i]);
 		}
 		Iterable<Integer> keysIt = datSweetHashMap.keys();
+		int counter = 0;
 		for (int key : keysIt) {
 			if(datSweetHashMap.contains(key)){
+				counter++;
 				System.out.println(key + "," + datSweetHashMap.get(key).toString());
 			}
 		}
+		System.out.println(counter);
 	}
 
 	/**

@@ -22,23 +22,20 @@ public class SeparateChainHashSTTest<K, V> {
 
 	@Test
 	public void testPut() {
-		System.out.println("put1:" + items[12].hashCode());
 		hashMap.put(items[12].hashCode(), items[12]);
-		System.out.println("put2:" + items[12].hashCode());
 		assertNotNull(hashMap.get(items[12].hashCode()));
 	}
 
 	@Test
 	public void testDelete() {
+		hashMap.put(items[21].hashCode(), items[21]);
 		hashMap.delete(items[21].hashCode());
 		assertFalse(hashMap.contains(items[21].hashCode()));
 	}
 
 	@Test
 	public void testContains() {
-		System.out.println("contains1:" + items[15].hashCode());
 		hashMap.put(items[15].hashCode(), items[15]);
-		System.out.println("contains2:" + items[15].hashCode());
 		assertTrue(hashMap.contains(items[15].hashCode()));
 	}
 

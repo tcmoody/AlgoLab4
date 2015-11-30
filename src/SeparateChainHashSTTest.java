@@ -28,11 +28,11 @@ public class SeparateChainHashSTTest<K, V> {
 		assertNotNull(hashMap.get(items[12].hashCode()));
 	}
 
-//	@Test
-//	public void testDelete() {
-//		hashMap.delete(items[21].hashCode());
-//		assertFalse(hashMap.contains(items[21].hashCode()));
-//	}
+	@Test
+	public void testDelete() {
+		hashMap.delete(items[21].hashCode());
+		assertFalse(hashMap.contains(items[21].hashCode()));
+	}
 
 	@Test
 	public void testContains() {

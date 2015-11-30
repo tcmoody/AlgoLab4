@@ -31,3 +31,4 @@ public class SequentialSearch<K, V> {
 		first = new Node(key, value, first);
 	}
 }
+

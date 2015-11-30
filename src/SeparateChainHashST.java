@@ -30,7 +30,6 @@ public class SeparateChainHashST<K, V> implements SymbolTable<K, V> {
 		if (key == null) {
 			throw new NullPointerException();
 		}
-		//System.out.println("get:" + key);
 		return table[((int) key % tableSize)].get(key);
 	}
 
@@ -47,7 +46,6 @@ public class SeparateChainHashST<K, V> implements SymbolTable<K, V> {
 		if (key == null) {
 			throw new NullPointerException();
 		}
-		//System.out.println("contains:" + key);
 		return table[(int) key % tableSize].contains(key);
 	}
 

@@ -36,29 +36,23 @@ public class SequentialSearchST<K, V> {
 			delete(key);
 			return;
 		}
-		
+		if(first == null){
+			first = new Node(key, value, null);
+			return;
+		}
 		Node prev = null;
 		for (Node node = first; node != null; node = node.next) {
 			if (key.equals(node.key)) {
-				if (node == first) {
-					node.value = value;
-				} else {
-					node.value = value;
-					prev.next = node.next;
-					node.next = first;
-					first = node;
-				}
+				node.value=value;
 				return;
-			}
+				}
 			prev = node;
 		}
-		
-		if(first == null){
-			first = new Node(key, value, null);
+		prev.next = new Node(key, value, null);
+		System.out.println("==========================");
+		for(Node n = first; n!=null; n = n.next){
+			System.out.println(n);
 		}
-//		for(Node n = first; n!=null; n = n.next){
-//			System.out.println(n);
-//		}
 		sz++;
 	}
 
